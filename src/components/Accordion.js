@@ -6,7 +6,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 
-export default function AccordionUsage() {
+export default function AccordionUsage({data}) {
+  console.log(data)
   return (
     <div>
       <Accordion>
