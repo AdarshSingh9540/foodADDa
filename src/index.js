@@ -1,19 +1,55 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import appStore from './utils/appStore';
-import { Provider } from 'react-redux';
+import React, { Suspense, lazy } from "react";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Provider store={appStore}>
-    <App />
-  </Provider>
-);
+import ReactDOM from "react-dom/client";
+import Body from "../src/components/Body";
+import Footer from "../src/components/Footer";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import Error from "../src/components/Error";
+import Contact from "../src/components/Contact";
+import Cart from "../src/components/Cart";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import Menu from "../src/components/Menu";
+import { Provider } from "react-redux";
+import Store from "../src/utils/store";
+import App from "./App";
+
+
+
+const appRouter = createBrowserRouter([
+  {
+    path:"/",
+    element:<App/>,
+    errorElement:<Error/>,
+    children: [
+      {
+        path:"/",
+        element:<Body/>
+      },
+      // {
+      //   path:"/about",
+      //   element:<About/>
+      // },
+      {
+        path:"/contact",
+         element:<Contact/>
+      },
+      {
+        path:"/cart",
+        element:<Cart />
+      }
+      ,
+      {
+        path:"/restaurant/:resId",
+        element:<Menu />
+      },
+      // {
+      //   path:"/Instamart",
+      //   element:(<Suspense fallback={<Shimmer/>} ><Instamart/></Suspense>)
+      // }
+    ]
+  },
+])
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<RouterProvider router={appRouter} />);

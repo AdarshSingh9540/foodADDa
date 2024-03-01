@@ -8,7 +8,7 @@ const useRes = (resId) =>{
      },[])
      console.log({resId} )
      async function getRestaurantInfo(){
-         const data = await fetch("https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING");
+         const data = await fetch(Menu_URL+resId);
          const json = await data.json();
          
          console.log(json);

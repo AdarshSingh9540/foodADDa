@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Picker from 'emoji-picker-react';
-// import { restrauantList } from "../../Constant";
-// import RestrauantCard from "./RestrauantCard";
-// import Shimmer from "./Shimmer";
-// import useOnline from '../utils/useOnline';
-// import { Link } from "react-router-dom";
+import RestrauantCard from "./RestrauantCard";
+import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 function filterData(searchInput, restaurants) {
   const filteredData = restaurants.filter((restaurant) =>
@@ -49,10 +46,10 @@ const fetchdata = async () => {
   }
 };
 
-const isOnline = useOnline();
-if(!isOnline){
-  return <h1> Offline ,Please Check your internet connection ...!!</h1>
-}
+// const isOnline = useOnline();
+// if(!isOnline){
+//   return <h1> Offline ,Please Check your internet connection ...!!</h1>
+// }
 
 if(!allRestaurants) return null;
 
@@ -61,16 +58,17 @@ if(!allRestaurants) return null;
   
   return allRestaurants.length===0?(<Shimmer/>) : (
     <>
-      <div className="search-container">
+      <div className="search-container m-4 px- mx-6 flex flex-row justify-end">
         <input
+        className="  border border-black p-1 rounded-md w-3/12  "
           type="text"
-          className="search-type"
+          // className="search-type"
           placeholder="Search.."
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
-          className="search-btn"
+          className="search-btn bg-green-600 p-1 px-3 rounded-md mx-2"
           onClick={() => {
             const data = filterData(searchInput, allRestaurants);
             setFilteredRestaurants(data);
@@ -80,7 +78,7 @@ if(!allRestaurants) return null;
         </button>
       </div>
 
-      <div className="list">
+      <div className="list  flex flex-wrap justify-evenly text-center text-pretty">
 
         {filteredRestaurants.map((restaurant,index) =>{ 
           
@@ -88,7 +86,7 @@ if(!allRestaurants) return null;
 console.log(id);
 
           return (
-         <Link style={{textDecoration:"none"}} to={"/restaurant/"+id} key={id}> <RestrauantCard  restaurant={restaurant} />  </Link>
+         <Link  to={"/restaurant/"+id} key={id} className="mb-7"> <RestrauantCard  restaurant={restaurant} />  </Link>
         );
         })}
       </div>
