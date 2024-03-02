@@ -44,7 +44,7 @@ if(!allRestaurants) return <Shimmer/>;
       <div className="search-container m-4 px- mx-6 flex flex-row justify-end">
       
         <input
-        className="  border border-black p-1 rounded-md w-3/12  "
+        className="  border  p-1 rounded-md w-3/12 shadow-xl  "
           type="text"
           // className="search-type"
           placeholder="Search.."
@@ -52,7 +52,7 @@ if(!allRestaurants) return <Shimmer/>;
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
-          className="search-btn bg-green-600 p-1 px-3 rounded-md mx-2"
+          className="search-btn bg-green-600 p-1 px-3 rounded-md mx-2 shadow-lg"
           onClick={() => {
             const data = filterData(searchInput, allRestaurants);
             setFilteredRestaurants(data);
