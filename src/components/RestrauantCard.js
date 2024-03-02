@@ -19,13 +19,13 @@ const RestrauantCard = (props) => {
         <h1 className="isOpen bg-green-500 text-white p-1 m-1 text-l rounded-md" >{isOpenState.toString()}</h1>
       </div>
       <div className="card">
-        <img src={IMG_CDN_URL + props.restaurant.info.cloudinaryImageId} alt="img" /> 
+        <img className='w-[90%] m-2 p-2 rounded-lg' src={IMG_CDN_URL + props.restaurant.info.cloudinaryImageId} alt="img" /> 
         <h1 className="heading text-xl font-semibold">{props.restaurant.info.name}</h1>
         <h4 className="heading">
           {props.restaurant.info.cuisines.join(", ")}
         </h4>
         <h3 className="heading">{props.restaurant.info.locality}</h3>
-        <h4 className="heading">{props.restaurant.info.avgRatingString} stars</h4>
+        <h4 className="heading">{props.restaurant.info.avgRatingString} ⭐️ </h4>
         <h4 className="heading">{props.restaurant.info.costForTwo}</h4>
       </div>
     </div>
