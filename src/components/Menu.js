@@ -14,10 +14,10 @@ const Menu = () =>{
     const res = useRes(resId);
     console.log(res)
   
-    // let cat = res.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((e) =>
-    // e.card?.card?.hasOwnProperty("itemCards")
-    // )
-    // console.log(cat)
+    let cat = res?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((e) =>
+    e.card?.card?.hasOwnProperty("itemCards")
+    )
+    console.log(cat)
     return !res? <Shimmer/>: (
         <div className="Menu">
    {/* {console.log(res?.cards[0]?.card?.card?.info)} */}
@@ -31,7 +31,7 @@ const Menu = () =>{
           <h3 className="text-xl">{res?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
          </div>
                </div>
-{/* 
+
                <div className="flex text-center justify-center w-6/12 m-auto">
       <p>
         {cat.map((element,index) => (
@@ -39,7 +39,7 @@ const Menu = () =>{
                 
         ))}
       </p>
-     </div> */}
+     </div>
                
         </div>
       );
