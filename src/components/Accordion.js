@@ -8,11 +8,13 @@ import Button from '@mui/material/Button';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../utils/cartSlice';
 import { IMG_CDN_URL } from '../utils/Constant';
+
+
 export default function AccordionUsage({data}) {
   const menunames = data?.itemCards;
   const dispatch = useDispatch();
   const handleadd = (element) =>{
-    dispatch(addItem(element.card.info))
+    dispatch(addItem(element?.card?.info))
     
    }
 
@@ -56,7 +58,7 @@ export default function AccordionUsage({data}) {
                  <img
                    className="rounded-lg w-36  shadow-2xl "
                    alt="image didnt load"
-                   src={IMG_CDN_URL + element.card.info.imageId}
+                   src={IMG_CDN_URL + element?.card?.info?.imageId}
                  />
                </div>
                <div className='absolute top-4 left-10'>

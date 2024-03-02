@@ -18,14 +18,6 @@ useEffect(() => {
   fetchdata();
 }, []);
 
-// async function getRestaurants(){
-//    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-//    const json = await data.json();
-//   //  console.log(json);
-//    console.log(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants)
-//   //  setRestaurants(json.data.cards[2].card.card.gridElements.infoWithStyle);
-
-// }
 const fetchdata = async () => {
   try {
     const data = await fetch(
@@ -33,8 +25,6 @@ const fetchdata = async () => {
     );
 
     const json = await data.json();
-
-    // console.log(json.data.cards[1].card.card.gridElements.infoWithStyle);
     // optional channing
     setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -46,19 +36,13 @@ const fetchdata = async () => {
   }
 };
 
-// const isOnline = useOnline();
-// if(!isOnline){
-//   return <h1> Offline ,Please Check your internet connection ...!!</h1>
-// }
 
-if(!allRestaurants) return null;
-
-// if(filteredRestaurants?.length ===0)  
-// return <h1>No Restraunt is match</h1>;
+if(!allRestaurants) return <Shimmer/>;
   
   return allRestaurants.length===0?(<Shimmer/>) : (
     <>
       <div className="search-container m-4 px- mx-6 flex flex-row justify-end">
+      
         <input
         className="  border border-black p-1 rounded-md w-3/12  "
           type="text"
