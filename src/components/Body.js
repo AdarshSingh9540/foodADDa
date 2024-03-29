@@ -26,6 +26,7 @@ const fetchdata = async () => {
 
     const json = await data.json();
     // optional channing
+    console.log(json)
     setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     

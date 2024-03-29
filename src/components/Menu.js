@@ -8,28 +8,28 @@ import AccordionUsage from "./Accordion";
 const Menu = () =>{
 
     // const [res , setRes] = useState({});
-
     const {resId} = useParams();
-
+console.log(resId)
     const res = useRes(resId);
     console.log(res)
-  
-    let cat = res?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((e) =>
+  console.log(res?.cards[2]?.card?.card?.info?.city)
+    let cat = res?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((e) =>
     e.card?.card?.hasOwnProperty("itemCards")
+   
     )
     console.log(cat)
     return !res? <Shimmer/>: (
         <div className="Menu">
-   {/* {console.log(res?.cards[0]?.card?.card?.info)} */}
+   {console.log(res?.cards[0]?.card?.card?.info)}
           <div className="bg-gray-500 h-64 flex items-center justify-center">
-          <div className="left"><img className="w-64  h-48 rounded-md m-4" src={IMG_CDN_URL+res?.cards[0]?.card?.card?.info?.cloudinaryImageId} alt="" /></div>
+          <div className="left"><img className="w-64  h-48 rounded-md m-4" src={IMG_CDN_URL+res?.cards[2]?.card?.card?.info?.cloudinaryImageId} alt="" /></div>
          <div className=" text-center text-white">
-         <h2 className="text-4xl font-bold mx-12 " >{res?.cards[0]?.card?.card?.info?.name}</h2>
-          <h3 className="text-xl ml-4 mt-3 ">{res?.cards[0]?.card?.card?.info?.cuisines.join(" , ")}</h3>
-          <h3 className="text-xl"> {res?.cards[0]?.card?.card?.info?.areaName} , {res?.cards[0]?.card?.card?.info?.city}</h3>
-          <h3 className="text-xl">{res?.cards[0]?.card?.card?.info?.avgRating} ⭐️
+         <h2 className="text-4xl font-bold mx-12 " >{res?.cards[2]?.card?.card?.info?.name}</h2>
+          <h3 className="text-xl ml-4 mt-3 ">{res?.cards[2]?.card?.card?.info?.cuisines.join(" , ")}</h3>
+          <h3 className="text-xl"> {res?.cards[2]?.card?.card?.info?.areaName} , {res?.cards[2]?.card?.card?.info?.city}</h3>
+          <h3 className="text-xl">{res?.cards[2]?.card?.card?.info?.avgRating} ⭐️
           </h3>
-          <h3 className="text-xl">{res?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
+          <h3 className="text-xl">{res?.cards[2]?.card?.card?.info?.costForTwoMessage}</h3>
          </div>
                </div>
 
