@@ -22,12 +22,12 @@ console.log(resId)
         <div className="Menu">
    {console.log(res?.cards[0]?.card?.card?.info)}
           <div className="bg-gray-500 h-56 md:h-64 flex items-center justify-center">
-          <div className="left"><img className=" w-44 md:w-64  h-40 md:h-48 rounded-md m-4" src={IMG_CDN_URL+res?.cards[2]?.card?.card?.info?.cloudinaryImageId} alt="" /></div>
+          <div className="left"><img className=" w-40 md:w-64  h-40 md:h-48 rounded-md m-4" src={IMG_CDN_URL+res?.cards[2]?.card?.card?.info?.cloudinaryImageId} alt="" /></div>
          <div className=" text-center text-white">
-         <h2 className="text-4xl font-bold mx-12 " >{res?.cards[2]?.card?.card?.info?.name}</h2>
-          <h3 className="text-xl ml-4 mt-3 ">{res?.cards[2]?.card?.card?.info?.cuisines.join(" , ")}</h3>
-          <h3 className="text-xl"> {res?.cards[2]?.card?.card?.info?.areaName} , {res?.cards[2]?.card?.card?.info?.city}</h3>
-          <h3 className="text-xl">{res?.cards[2]?.card?.card?.info?.avgRating} ⭐️
+         <h2 className="text-lg md:text-4xl font-bold mx-4 md:mx-12 " >{res?.cards[2]?.card?.card?.info?.name}</h2>
+          <h3 className="text-lg md:text-xl ml-4 md:mt-3 ">{res?.cards[2]?.card?.card?.info?.cuisines.join(" , ")}</h3>
+          <h3 className="text-lg md:text-xl"> {res?.cards[2]?.card?.card?.info?.areaName} , {res?.cards[2]?.card?.card?.info?.city}</h3>
+          <h3 className="text-lg md:text-xl">{res?.cards[2]?.card?.card?.info?.avgRating} ⭐️
           </h3>
           <h3 className="text-xl">{res?.cards[2]?.card?.card?.info?.costForTwoMessage}</h3>
          </div>
