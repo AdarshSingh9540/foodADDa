@@ -14,9 +14,9 @@ const RestrauantCard = (props) => {
   }
   
   return !props ? <Shimmer /> : ( 
-    <div className='m-2 border-2 p-2 w-60 h-full rounded-lg shadow-lg hover:shadow-2xl hover:bg-gray-300 hover:scale-110 transition-transform duration-300 text-slate-800 relative'>
+    <div className='m-2 border-2 p-2 w-80 md:w-60 h-full rounded-lg shadow-lg hover:shadow-2xl hover:bg-gray-300 hover:scale-110 transition-transform duration-300 text-slate-800 relative'>
       <div className="absolute top-0 left-0">
-        <h1 className="isOpen bg-green-500 text-white p-1 m-1 text-l rounded-md" >{isOpenState.toString()}</h1>
+        <h1 className="isOpen bg-green-500 text-white p-2 md:p-1 m-2 md:m-1 text-l rounded-md" >{isOpenState.toString()}</h1>
       </div>
       <div className="card">
         <img className='w-[90%] m-2 p-2 rounded-lg' src={IMG_CDN_URL + props.restaurant.info.cloudinaryImageId} alt="img" /> 

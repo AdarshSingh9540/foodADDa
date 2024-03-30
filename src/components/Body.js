@@ -45,7 +45,7 @@ if(!allRestaurants) return <Shimmer/>;
       <div className="search-container m-4 px- mx-6 flex flex-row justify-end">
       
         <input
-        className="  border  p-1 rounded-md w-3/12 shadow-xl  "
+        className="  border  p-1 rounded-md  w-9/12 md:w-3/12 shadow-xl  "
           type="text"
           // className="search-type"
           placeholder="Search.."
