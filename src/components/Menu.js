@@ -33,7 +33,7 @@ console.log(resId)
          </div>
                </div>
 
-               <div className="flex text-center justify-center w-6/12 m-auto">
+               <div className="flex text-center justify-center    w-6/12 m-auto">
       <p>
         {cat.map((element,index) => (
           <AccordionUsage  key = {index} data={element?.card?.card} />

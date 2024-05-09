@@ -20,7 +20,7 @@ export default function AccordionUsage({data}) {
 
   console.log(data)
   return (
-    <div className='mt-4'>
+    <div className=' mt-4'>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -38,7 +38,7 @@ export default function AccordionUsage({data}) {
        <div className=" flex flex-col ">
          {menunames.map((element, index) => (
            
-           <div key={index} className=" m-4 p-4 rounded-md shadow-md hover:scale-110 transition-transform duration-300 ">
+           <div key={index} className=" m-2 md:m-4 p-2 md:p-4 rounded-md shadow-md hover:scale-110 transition-transform duration-300 ">
              <div className="p-1 items-center] flex justify-between">
                <div className=" ">
                  <p className="text-xl">
