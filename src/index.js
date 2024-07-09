@@ -12,8 +12,17 @@ import Menu from "../src/components/Menu";
 import { Provider } from "react-redux";
 import Store from "../src/utils/store";
 import App from "./App";
+import Carousal from "./components/Carousal";
+import HeroSection from "./components/HeroSection";
 
 
+const HomePage = () => (
+  <>
+  <HeroSection/>
+    <Carousal/>
+    <Body/>
+  </>
+);
 
 const appRouter = createBrowserRouter([
   {
@@ -22,8 +31,8 @@ const appRouter = createBrowserRouter([
     errorElement:<Error/>,
     children: [
       {
-        path:"/",
-        element:<Body/>
+        path: "/",
+        element: <HomePage /> 
       },
       // {
       //   path:"/about",
@@ -42,10 +51,7 @@ const appRouter = createBrowserRouter([
         path:"/restaurant/:resId",
         element:<Menu />
       },
-      // {
-      //   path:"/Instamart",
-      //   element:(<Suspense fallback={<Shimmer/>} ><Instamart/></Suspense>)
-      // }
+      
     ]
   },
 ])
