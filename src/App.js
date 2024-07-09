@@ -7,11 +7,15 @@ import Footer from "./components/Footer";
 import store from './utils/store';
 import { Provider } from 'react-redux';
 import { Outlet } from "react-router-dom";
+import HeroSection from './components/HeroSection';
+import Carousal from './components/Carousal';
 function App() {
   return(
     <>
     <Provider store={store}>
     <Header />
+    <HeroSection/>
+    <Carousal/>
     {/* <Body /> */}
     <Outlet/>
     <Footer />

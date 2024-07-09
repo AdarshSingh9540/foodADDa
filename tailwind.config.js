@@ -1,10 +1,22 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./src/**/*.{js,jsx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      
+    },
   },
-  plugins: [],
-}
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-none': {
+          '::-webkit-scrollbar': { display: 'none' }, /* Hide scrollbar for Chrome, Safari, and Opera */
+          'scrollbar-width': 'none', /* Hide scrollbar for Firefox */
+        },
+      });
+    },
+  ],
+};
